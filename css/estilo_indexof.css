@@ -1,0 +1,48 @@
+/* Reseteo básico de estilos */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para la barra de navegación */
+nav {
+    background-color: #333; /* Color de fondo */
+    padding: 10px 0; /* Espaciado superior e inferior */
+}
+
+.nav {
+    list-style: none; /* Quita viñetas de la lista */
+    display: flex; /* Usa flexbox para alinear los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    margin-right: 20px; /* Espaciado entre elementos */
+}
+
+.nav li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento */
+}
+
+.nav a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: white; /* Color del texto */
+    font-size: 1rem; /* Tamaño de fuente */
+    padding: 5px 10px; /* Espaciado interno para los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Animación suave al pasar el cursor */
+}
+
+.nav a:hover {
+    background-color: #575757; /* Color al pasar el cursor */
+}
+
+/* Estilos para la imagen */
+.nav img {
+    height: 50px; /* Ajusta la altura de la imagen */
+    width: auto; /* Mantiene proporciones */
+    vertical-align: middle; /* Alinea verticalmente */
+}

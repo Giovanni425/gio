@@ -1,0 +1,116 @@
+/* Reseteo básico */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #2c262681; /* Fondo claro */
+}
+
+
+nav {
+    background-color: rgb(19, 17, 17); /* Color de fondo */
+    margin-right:-20vh;
+    padding: 10px 0 ; /* Espaciado superior e inferior */
+}
+
+.nav {
+    list-style: none; /* Quita viñetas de la lista */
+    display: flex; /* Usa flexbox para alinear los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    margin-right: 20px; /* Espaciado entre elementos */
+}
+
+.nav li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento */
+}
+
+.nav a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: white; /* Color del texto */
+    font-size: 1rem; /* Tamaño de fuente */
+    padding: 5px 10px; /* Espaciado interno para los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Animación suave al pasar el cursor */
+}
+
+.nav a:hover {
+    background-color: #3d3939; /* Color al pasar el cursor */
+}
+
+/* Estilos para la imagen */
+.nav img {
+    height: 50px; /* Ajusta la altura de la imagen */
+    width: auto; /* Mantiene proporciones */
+    vertical-align: middle; /* Alinea verticalmente */
+}
+
+#puerta,#barandal,#techo,#baño{
+    max-width: 100%;
+}
+
+
+/* Contenedor principal */
+.container {
+    display: flex; /* Habilita Flexbox */
+    justify-content: space-between; /* Espacio igual entre los div */
+    flex-wrap: wrap; /* Permite que los divs se ajusten si no caben en una fila */
+    gap: 20px; /* Espaciado entre divs */
+    padding: 20px;
+}
+
+/* Divs que contienen los formularios */
+.container > div {
+    background-color: #343A40;
+    border: 1px solid #3c3c3c88;
+    border-radius: 5px; 
+    padding: 15px;
+    text-align: center;
+    width: 250px; /* Ancho fijo para alineación */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Formularios */
+form {
+    display: flex; /* Activa Flexbox en el formulario */
+    flex-direction: column; /* Alinea los elementos verticalmente */
+    align-items: center; /* Centra horizontalmente los elementos */
+    justify-content: center; /* Opcional: centra verticalmente si el formulario es alto */
+    gap: 10px; /* Espaciado entre los elementos dentro del formulario */
+}
+
+/* Imagen dentro del formulario */
+form img {
+    max-width: 100%; /* Asegura que la imagen sea responsive */
+    height: auto;
+    border-radius: 5px; /* Estilo para esquinas redondeadas */
+}
+
+/* Botón del formulario */
+form button {
+    background-color: #B22222;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form label{
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #FF4500;
+}
+
+
+
+
+    

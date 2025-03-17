@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Canceleria de Aluminio</title>
+
+    </head>
+
+    <style>
+    /* Estilo general en el body*/
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(to right, #eef2f3, #8e9eab);
+        margin: 0;
+        padding: 0px;
+        text-align: center;
+        color: #2C3E50;
+    }
+
+    nav {
+    background-color: #327f96; /* Color de fondo */
+    padding: 10px 0; /* Espaciado superior e inferior */
+}
+
+.nav {
+    list-style: none; /* Quita viñetas de la lista */
+    display: flex; /* Usa flexbox para alinear los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    margin-right: 20px; /* Espaciado entre elementos */
+}
+
+.nav li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento */
+}
+
+.nav a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: #FFFFFF; /* Color del texto */
+    font-size: 1rem; /* Tamaño de fuente */
+    padding: 5px 10px; /* Espaciado interno para los enlaces */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s; /* Animación suave al pasar el cursor */
+}
+
+.nav a:hover {
+    background-color: #575757; /* Color al pasar el cursor */
+}
+
+/* Estilos para la imagen */
+.nav img {
+    height: 50px; /* Ajusta la altura de la imagen */
+    width: auto; /* Mantiene proporciones */
+    vertical-align: middle; /* Alinea verticalmente */
+}
+
+
+    /* Contenedor horizontal para los inputs de medidas */
+    .registro_cliente {
+        background:#2C3E50;
+        padding: 20px;
+        margin: 20px auto;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .registro_cliente label{
+        color: red;
+    }
+
+    .registro_cliente input {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    /* Estilo para la sección de medidas */
+    .medidas-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .medidas-container input {
+        width: 48%; /* Ocupa el 48% para que ambos inputs quepan en una fila */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .registro_cliente input::placeholder{
+        text-size-adjust: auto;
+    }
+
+    label {
+        display: block;
+        margin-top: 10px;
+        font-size: 14px;
+        color: #555;
+    }
+
+    /* Título principal */
+    h2 {
+        color: #0077b6;
+        margin-bottom: 20px;
+        font-size: 1.8em;
+        text-transform: uppercase;
+    }
+
+    /* Tabla */
+    table {
+        width: 90%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    thead tr {
+        background-color: rgba(44, 124, 204, 0.649);
+        color: white;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: center;
+        border: 1px solid #ddd;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tbody tr:hover {
+        background-color: #BDC3C7 ;
+    }
+
+    input[type="text"] {
+        padding: 5px;
+        border: 1px solid #040404;
+        border-radius: 4px;
+        text-align: center;
+        width: 80%;
+        
+    }
+
+    /* Botón */
+    button {
+        background-color: #2da496;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        margin: 20px auto;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease-in-out;
+    }
+
+    button:hover {
+        background-color: #45a049;
+        transform: translateY(-2px);
+    }
+
+    #texto-detectado {
+    background-color: #2980B9; /* Azul claro */
+    color: white; /* Texto en negro */
+    }
+
+
+    /* Ajustes para dispositivos móviles */
+    @media (max-width: 768px) {
+        table {
+            width: 100%;
+        }
+
+        .registro_cliente {
+            width: 90%;
+        }
+    }
+
+
+
+
+    </style>
+
+    <body>
+         <nav>
+        <ul class="nav">
+            <li><a href=""><img src="templalum.png" alt="Logo de la empresa"></a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="presupuesto.html">Presupuesto</a></li>
+        </ul>
+    </nav>
+
+        <div class="registro_cliente" >
+            <h2>Cliente</h2>
+            <input type="text" placeholder="Nombre del cliente">
+            <br>
+            <input type="text" placeholder="Color de aluminio de 2in">
+            <br>
+            <label for="medidas">Medidas</label>
+            <div class="medidas-container">
+                <input type="text" placeholder="Ancho">
+                <input type="text" placeholder="Alto">
+            </div>
+        </div>
+
+    <div class="presupuesto">
+        <h2>PRESUPUESTO DE VENTANA DE 2in</h2>  
+        <table>
+            <thead> 
+                <tr>
+                    <th>N°</th>
+                    <th>MATERIAL</th>
+                    <th>METROS</th>
+                    <th>ML</th>
+                    <th>CANTIDAD</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>JAMBA CON MOSQUITERO</td>
+                    <td>$98.00</td>
+                    <td><input type="text" id="jm"></td>
+                    <td id="cantidad_jambacon"></td>
+                    <td id="total1"></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>JAMBA SIN MOSQUITERO 2 PIEZAS</td>
+                    <td>$81.00</td>
+                    <td><input type="text" id="jsm"></td>
+                    <td id="cantidad_jambasin"></td>
+                    <td id="total2"></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>RIEL SENCILLO</td>
+                    <td>$48.00</td>
+                    <td><input type="text" id="rs"></td>
+                    <td id="cantidad_rielsencillo"></td>
+                    <td id="total3"></td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>ADAPTADOR MOSQUITERO</td>
+                    <td>$27.00</td>
+                    <td><input type="text" id="am"></td>
+                    <td id="cantidad_adaptadormosquitero"></td>
+                    <td id="total4"></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>ZOCLO PUERTA 2"</td>
+                    <td>$89.00</td>
+                    <td><input type="text" id="zp"></td>
+                    <td id="cantidad_zoclopuerta"></td>
+                    <td id="total5"></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>ZOCLO CABEZAL</td>
+                    <td>$35.00</td>
+                    <td><input type="text" id="zc"></td>
+                    <td id="cantidad_zoclocabezal"></td>
+                    <td id="total6"></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>CERCO CHAPA</td>
+                    <td>$43.00</td>
+                    <td><input type="text" id="cerco_chapa"></td>
+                    <td id="cantidad_cercochapa"></td>
+                    <td id="total7"></td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>CERCO TRASLAPE</td>
+                    <td>$54.00</td>
+                    <td><input type="text" id="ct"></td>
+                    <td id="cantidad_cercotraslape"></td>
+                    <td id="total8"></td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>MOSQUITERO VERTICAL</td>
+                    <td>$49.00</td>
+                    <td><input type="text" id="mv"></td>
+                    <td id="cantidad_mosquiterov"></td>
+                    <td id="total9"></td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>MOSQUITERO HORIZONTAL</td>
+                    <td>$54.00</td>
+                    <td><input type="text" id="mh"></td>
+                    <td id="cantidad_mosquiteroh"></td>
+                    <td id="total10"></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>1 JALADERA DE EMBUTIR</td>
+                    <td>$25.00</td>
+                    <td><input type="text" id="je"></td>
+                    <td id="cantidad_jaladeraembutir"></td>
+                    <td id="total11"></td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>1 JALADERA PLANA DE 12cm</td>
+                    <td>$20.00</td>
+                    <td><input type="text" id="jp"></td>
+                    <td id="cantidad_jaladeraplana"></td>
+                    <td id="total12"></td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>2 CARRETILLAS GORRA DE NAPOLEON</td>
+                    <td>$20.00</td>
+                    <td><input type="text" id="napoleon"></td>
+                    <td id="cantidad_napoleon"></td>
+                    <td id="total13"></td>
+                </tr>
+                <tr>
+                    <td>14</td>
+                    <td>2 CARRETILLAS PARA MOSQUITERO</td>
+                    <td>$15.00</td>
+                    <td><input type="text" id="cm"></td>
+                    <td id="cantidad_carretillamosquitero"></td>
+                    <td id="total14"></td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>2 CARRETILLAS FLEJE</td>
+                    <td>$15.00</td>
+                    <td><input type="text" id="cf"></td>
+                    <td id="cantidad_carretillafleje"></td>
+                    <td id="total15"></td>
+                </tr>
+                <tr>
+                    <td>16</td>
+                    <td>TELA MOSQUITERA</td>
+                    <td>$70.00</td>
+                    <td><input type="text" id="tm"></td>
+                    <td id="cantidadtela"></td>
+                    <td id="total16"></td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>VINIL</td>
+                    <td>$140.00</td>
+                    <td><input type="text" id="vinil"></td>
+                    <td id="cantidad_vinil"></td>
+                    <td id="total17"></td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>TORNILLERIA</td>
+                    <td>$40.00</td>
+                    <td><input type="text" id="tornilleria"></td>
+                    <td id="cantidad_tornilleria"></td>
+                    <td id="total18"></td>
+                </tr>
+                <tr>
+                    <td>19</td>
+                    <td>2 SILICONES</td>
+                    <td>$70.00</td>
+                    <td><input type="text" id="silicones"></td>
+                    <td id="cantidad_silicon"></td>
+                    <td id="total19"></td>
+                </tr>
+                <tr>
+                    <td>20</td>
+                    <td>CRISTAL M2</td>
+                    <td>$360.00</td>
+                    <td><input type="text" id="cristal"></td>
+                    <td id="cantidad_cristal"></td>
+                    <td id="total20"></td>
+                </tr>
+                <tr id="subt">
+                    <td></td>
+                    <td></td>
+                    <td>SUB-TOTAL</td>
+                    <td></td>
+                    <td></td>
+                    <td id="finalsub"></td>
+                </tr>
+                <tr id="manobra">Mano de Obra
+                    <td>21</td>
+                    <td></td>   
+                    <td></td>
+                    <td>MANO DE OBRA</td>
+                    <td></td>
+                    <td><input type="text" id="manodeobra"></td>
+                </tr>
+                <tr id="IVA">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>IVA</td>
+                    <td></td>
+                    <td id="ivasub"></td>
+                </tr>
+                <tr id="TOTAL">
+                    <td>22</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>TOTAL</td>
+                    <td id="totalfinal_tabla"></td>
+                </tr>
+            </tbody> 
+        </table>
+        <button onclick="presupuesto()" id="calcular">Calcular</button>
+        <script src="./js/funciones.js"></script>  
+
+    </div>
+  </body>
+</html>
